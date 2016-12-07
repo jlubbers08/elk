@@ -2,25 +2,25 @@ elasticsearch:
   extends:
     file: docker-compose-common.yml
     service: elasticsearch
-  image: nathanleclaire/elasticsearch:43d2b4f914a192d0de221cb744dab665b07f1268
+  image: elasticsearch
 logstash:
   extends:
     file: docker-compose-common.yml
     service: logstash
-  image: nathanleclaire/logstash:43d2b4f914a192d0de221cb744dab665b07f1268
+  image: logstash
   links:
     - elasticsearch:elasticsearch
 kibana:
   extends:
     file: docker-compose-common.yml
     service: kibana
-  image: nathanleclaire/kibana:43d2b4f914a192d0de221cb744dab665b07f1268
+  image: kibana
 logspout:
   net: container:logstash
   extends:
     file: docker-compose-common.yml
     service: logspout
-  image: nathanleclaire/logspout:43d2b4f914a192d0de221cb744dab665b07f1268
+  image: gliderlabs/logspout
 cadvisor:
   extends:
     file: docker-compose-common.yml
