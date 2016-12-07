@@ -15,8 +15,6 @@ kibana:
   ports:
     - "80:80"
 logspout:
-  environment:
-    DEBUG: true
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
   command: syslog://localhost:5000
